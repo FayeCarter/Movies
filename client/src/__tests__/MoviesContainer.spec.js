@@ -34,6 +34,8 @@ test('renders the <ArticlesContainer /> with an article', async () => {
 
   await waitForElement(() => [
     expect(getByText("Movies")).toBeTruthy(),
-    expect(queryByTestId("movie-title").textContent).toEqual("Master and Commander: The Far Side of the World")
+    expect(queryByTestId("movie-title").textContent).toEqual("Master and Commander: The Far Side of the World"),
+    expect(queryByTestId("movie-about").textContent).toContain("After an abrupt and violent encounter with a French warship inflicts severe damage upon his ship, a captain of the British"),
+    expect(queryByTestId("movie-rating").textContent).toEqual("7"),
   ]);
 });
