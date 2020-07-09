@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[Queries.TMDBAPI] fetches an array of articles from the TMDB API 1`] = `
+Object {
+  "data": Object {
+    "popularMovies": Array [
+      Object {
+        "about": "After an abrupt and violent encounter with a French warship inflicts severe damage upon his ship, a captain of the British Royal Navy begins a chase over two oceans to capture or destroy the enemy, though he must weigh his commitment to duty and ferocious pursuit of glory against the safety of his devoted crew, including the ship's thoughtful surgeon, his best friend.",
+        "genre_ids": Array [
+          12,
+          18,
+          10752,
+        ],
+        "id": "8619",
+        "image": "/s1cVTQEZYn4nSjZLnFbzLP0j8y2.jpg",
+        "rating": "7",
+        "title": "Master and Commander: The Far Side of the World",
+      },
+    ],
+  },
+  "errors": undefined,
+  "extensions": undefined,
+  "http": Object {
+    "headers": Headers {
+      Symbol(map): Object {},
+    },
+  },
+}
+`;
