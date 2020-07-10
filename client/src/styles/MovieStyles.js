@@ -6,3 +6,7 @@ export const MovieWrapper = styled.section`
   margin: 5px;  
   box-sizing: border-box;
 `;
+
+export const MoviePoster = styled.img`
+  width: 100%;
+`;
