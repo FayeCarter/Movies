@@ -10,3 +10,11 @@ export const MovieWrapper = styled.section`
 export const MoviePoster = styled.img`
   width: 100%;
 `;
+
+export const MovieTitle = styled.h1`
+  background-color: rgba(240, 80,70, 0.8);
+  text-align: center;
+  color: white;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+`;
