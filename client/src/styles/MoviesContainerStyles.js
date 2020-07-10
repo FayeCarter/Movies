@@ -27,4 +27,5 @@ export const MoviesContainerWrapper = styled.main`
   margin: auto;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 `;

@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { MovieWrapper, MoviePoster, MovieTitle, MovieRating } from "../styles/MovieStyles";
+import { MovieWrapper, MoviePoster, MovieTitle, MovieDetails, MovieInfo } from "../styles/MovieStyles";
 
 export const Movie = ({ movie }) => {
+  const [active, setActive] = useState(false);
   const [ movieDetails, setMovieDetails ] = useState("");
   const [ movieTitle, setMovieTitle ] = useState( movie.title );
 
@@ -21,6 +22,7 @@ export const Movie = ({ movie }) => {
   }
 
   const activeMovie = () => {
+    active ? setActive(false) : setActive(true);
     movieDetails === "" ? setMovieDetails(movie.about) : setMovieDetails("");
     movieTitle === movie.title ? getShortTitle() : setMovieTitle(movie.title);
   }
@@ -30,11 +32,15 @@ export const Movie = ({ movie }) => {
   }, []);
 
   return (
-    <MovieWrapper data-testid="movie" onClick={ activeMovie } >
+    <MovieWrapper data-testid="movie" active={active} onClick={ activeMovie } >
       <MovieTitle data-testid="movie-title" >{ movieTitle }</MovieTitle>
-      <MoviePoster data-testid="movie-image" src={`http://image.tmdb.org/t/p/w185/${ movie.image }`} alt="poster"/>
-      <MovieRating data-testid="movie-rating" >{ movie.rating }</MovieRating>
-      <div data-testid="movie-about" >{movieDetails}</div>
+      <div>
+        <MoviePoster data-testid="movie-image" src={`http://image.tmdb.org/t/p/w185/${ movie.image }`} alt="poster"/>
+        <MovieInfo active={active} >
+          <div data-testid="movie-about" >{movieDetails}</div>
+          <div data-testid="movie-rating">{ movie.rating }</div>
+        </ MovieInfo>
+      </ div>
     </MovieWrapper>
   );
 };
