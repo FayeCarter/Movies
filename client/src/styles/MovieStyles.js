@@ -11,7 +11,7 @@ export const MoviePoster = styled.img`
   width: 100%;
 `;
 
-export const MovieTitle = styled.h1`
+export const MovieTitle = styled.h3`
   background-color: rgba(240, 80,70, 0.8);
   text-align: center;
   color: white;
