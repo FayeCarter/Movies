@@ -18,3 +18,7 @@ export const MovieTitle = styled.h1`
   border-top: 2px solid black;
   border-bottom: 2px solid black;
 `;
+
+export const MovieRating = styled.div`
+  text-align: center;
+`;
