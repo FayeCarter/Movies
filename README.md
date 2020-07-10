@@ -1,10 +1,13 @@
 # Movie App
 
+A project to experiment with GraphQl, Apollo and React using The Movie Database [API](https://www.themoviedb.org/documentation/api).
+
 ### Aims
 
-- [ ] Display Popular Movies
+- [X] Display Popular Movies
 - [ ] Display Top movies
-- [ ] Display Rating
+- [X] Display Genre List
+- [X] Display Rating
 - [ ] View trailer
 - [ ] See where to watch
 - [ ] Watched list *+ Shared list*
