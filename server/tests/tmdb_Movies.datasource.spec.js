@@ -3,7 +3,7 @@ import {
   emptyReducerReturnValue, 
   getMoviePreReducerStub, 
   getMoviePostReducerStub 
-} from '../fixtures/TMDB';
+} from '../fixtures/TMDB_Movies';
 
 const datasource = new TMDBAPI();
 datasource.get = jest.fn();

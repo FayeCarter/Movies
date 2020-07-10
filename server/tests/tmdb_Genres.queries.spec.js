@@ -3,17 +3,13 @@ import { ApolloServer, gql } from 'apollo-server';
 import { TMDBAPI } from "../datasources/TMDB";
 import { resolvers } from '../resolvers';
 import { typeDefs } from '../typedefs';
-import { getMoviePreReducerStub } from '../fixtures/TMDB';
+import { getGenrePreReducerStub } from '../fixtures/TMDB_Genres';
 
-const GET_POPULAR_MOVIES= gql`
-  query getPopularMovies {
-    popularMovies {
+const GET_MOVIE_GENRES= gql`
+  query getGenres{
+    movieGenres {
       id
-      title
-      image
-      about
-      genre_ids
-      rating
+      genre
     }
   }
 `;
@@ -33,18 +29,18 @@ const constructTestServer = () => {
 }
 
 describe('[Queries.TMDBAPI]', () => {
-  it('fetches an array of articles from the TMDB API', async () => {
+  it('fetches an array of genres from the TMDB API', async () => {
     const { server, tmdbAPI } = constructTestServer();
 
     tmdbAPI.get = jest.fn(() => ({
-      results: [getMoviePreReducerStub],
+      results: [getGenrePreReducerStub],
     }));
 
     const { query } = createTestClient(server);
 
     const response = await query({
-      query: GET_POPULAR_MOVIES,
-      variables: { ids: [8619] },
+      query: GET_MOVIE_GENRES,
+      variables: { ids: [28] },
     });
 
     expect(response).toMatchSnapshot();

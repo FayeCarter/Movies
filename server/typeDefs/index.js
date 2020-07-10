@@ -3,6 +3,7 @@ import { gql } from 'apollo-server';
 export const typeDefs = gql`
   type Query {
     popularMovies: [Movie!]!
+    movieGenres: [Genre!]!
   }
 
   type Movie {
@@ -12,5 +13,10 @@ export const typeDefs = gql`
     about: String
     genre_ids: [Int]
     rating: String
+  }
+
+  type Genre {
+    id: ID
+    genre: String
   }
 `;

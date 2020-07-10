@@ -19,9 +19,21 @@ export class TMDBAPI extends RESTDataSource {
     }
   }
 
+  genreReducer({ id, name } = {}) {
+    return {
+      id,
+      genre: name,
+    }
+  }
+
   async getPopularMovies() {
     const result = await this.get(`movie/popular?page={0}&api_key=${this.authKey}`);
     return result?.results?.map(movie => this.movieReducer(movie));
+  }
+
+  async getGenres() {
+    const result = await this.get(`genre/list?api_key=${this.authKey}`);
+    return result?.genres.map(genre => this.genreReducer(genre));
   }
 
 }
