@@ -1,6 +1,5 @@
 import React from 'react';
 import { render, cleanup, fireEvent, waitForElement } from '@testing-library/react';
-import { MockedProvider } from '@apollo/react-testing';
 import { Movie } from '../components/Movie';
 import { popularMovies } from '../fixtures';
 
@@ -33,6 +32,7 @@ test("onClick renders <Movie /> with a movie details", async() => {
   fireEvent.click(queryByTestId("movie-title"));
 
   await waitForElement(() => [
+    expect(queryByTestId("movie-title").textContent).toEqual("Master and Commander: The Far Side of the World"),
     expect(queryByTestId("movie-about").textContent).toContain("After an abrupt and violent encounter with a French warship inflicts severe damage upon his ship, a captain of the British"),
   ]);
 });

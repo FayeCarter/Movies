@@ -21,7 +21,8 @@ export const Movie = ({ movie }) => {
   }
 
   const activeMovie = () => {
-    movieDetails === "" ? setMovieDetails(movie.about) : setMovieDetails("")
+    movieDetails === "" ? setMovieDetails(movie.about) : setMovieDetails("");
+    movieTitle === movie.title ? getShortTitle() : setMovieTitle(movie.title);
   }
 
   useEffect(() => {
