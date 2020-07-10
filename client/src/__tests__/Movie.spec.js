@@ -17,7 +17,7 @@ test("renders <Movie /> with a movie", async () => {
   );
   
   await waitForElement(() => [
-    expect(queryByTestId("movie-title").textContent).toEqual("Master and Commander: The Far Side of the World"),
+    expect(queryByTestId("movie-title").textContent).toEqual(" Master and The ..."),
     expect(queryByTestId("movie-rating").textContent).toEqual("7"),
     expect(queryByTestId("movie-image").getAttribute("src")).toEqual("http://image.tmdb.org/t/p/w185//s1cVTQEZYn4nSjZLnFbzLP0j8y2.jpg"),
   ]);

@@ -4,4 +4,4 @@ export const selectFields = ({ id, by, url, time, title } = {}) => ({
   url, 
   time, 
   title
-})
+}
