@@ -2,7 +2,7 @@ import React from 'react';
 import { render, cleanup, waitForElement } from '@testing-library/react';
 import { MockedProvider } from '@apollo/react-testing';
 import { MoviesContainer } from '../containers/MoviesContainer';
-import { popularMovies, noMovies } from '../fixtures';
+import { popularMovies } from '../fixtures';
 import { GET_POPULAR_MOVIES } from '../graphql/get-popular-movies';
 
 beforeEach(() => {

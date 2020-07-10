@@ -15,7 +15,12 @@ export const popularMovies = {
     }
   ]
 };
-
-export const noMovie = {
-  popularMovies: [],
-}
+export const movieGenres = {
+  movieGenres: [
+    {
+      id: 28,
+      genre: "action",
+      __typename: "genre",
+    }
+  ]
+};
